@@ -15,8 +15,8 @@ public class ValidationUtil extends StudentModel{
         try {
             int id = Integer.parseInt(lmuId);
             
-            if(id < 1000 || id > 10000){
-               JOptionPane.showMessageDialog(null, "Please Enter An Id Between 1000 And 10000!", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
+            if(id < 23000000 || id > 23999999){
+               JOptionPane.showMessageDialog(null, "Please Enter An Id Of Proper Value", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
                return false;
             }
             
@@ -38,7 +38,7 @@ public class ValidationUtil extends StudentModel{
         try {
             int id = Integer.parseInt(clgId);
             
-            if(id < 1000 || id > 10000){
+            if(id < 23000000 || id > 23999999){
                 JOptionPane.showMessageDialog(null, "Please Enter An Id Between 1000 And 10000!", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
                 return false;
             }
