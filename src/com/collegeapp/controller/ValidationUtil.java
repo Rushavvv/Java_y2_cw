@@ -4,6 +4,8 @@
  */
 package com.collegeapp.controller;
 import com.collegeapp.model.StudentModel;
+import com.collegeapp.view.CollegeApp;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author rushav
  */
 public class ValidationUtil extends StudentModel{
+
     public static boolean isLmuIdValid(String lmuId) {
         try {
             int id = Integer.parseInt(lmuId);

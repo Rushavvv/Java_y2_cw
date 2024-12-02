@@ -4,6 +4,9 @@ import com.collegeapp.controller.ValidationUtil;
 import com.collegeapp.model.StudentModel;
 import java.util.LinkedList;
 import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -58,6 +61,10 @@ public class CollegeApp extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
+        errorLmu = new javax.swing.JLabel();
+        errorCollege = new javax.swing.JLabel();
+        errorName = new javax.swing.JLabel();
+        errorNumber = new javax.swing.JLabel();
         pnlAboutUs = new javax.swing.JPanel();
         pnlLoginScreen = new javax.swing.JPanel();
         pnlLoginLeft = new javax.swing.JPanel();
@@ -127,7 +134,7 @@ public class CollegeApp extends javax.swing.JFrame {
         pnlHome.setLayout(pnlHomeLayout);
         pnlHomeLayout.setHorizontalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1188, Short.MAX_VALUE)
+            .addGap(0, 1274, Short.MAX_VALUE)
         );
         pnlHomeLayout.setVerticalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,32 +280,45 @@ public class CollegeApp extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        errorLmu.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(modules, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(modules, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(errorLmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lmuId, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(lmuId, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(collegeId, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(errorCollege, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(collegeId, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(errorName, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(174, 174, 174)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                         .addComponent(addBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(127, 127, 127)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(496, 496, 496))
+                    .addComponent(errorNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(582, 582, 582))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -307,19 +327,31 @@ public class CollegeApp extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(collegeId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lmuId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modules, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteBtn)
-                    .addComponent(addBtn)
-                    .addComponent(updateBtn))
-                .addGap(18, 18, 18)
+                .addGap(2, 2, 2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(errorCollege, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(errorLmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(errorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(errorNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deleteBtn)
+                            .addComponent(addBtn)
+                            .addComponent(updateBtn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -709,7 +741,27 @@ public class CollegeApp extends javax.swing.JFrame {
                 student.getClass(),
                 student.getContact()
             }));
+    }
+    
+    private void clearStudentForm(){
+        lmuId.setText("");
+        collegeId.setText("");
+        name.setText("");
+        num.setText("");
+    }
+    
+    private void errorOrNormalField(JTextField textField, String fieldName, JLabel errorLbl, String errorMsg, Color color, boolean isError){
+        textField.setBorder(
+                javax.swing.BorderFactory.createTitledBorder(
+                    javax.swing.BorderFactory.createLineBorder(color, 2), fieldName, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, 
+                    javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12),color));
+        
+        if(isError) {
+            errorLbl.setText(errorMsg);
+            errorLbl.setVisible(true);
         }
+        
+    }
     
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
@@ -722,21 +774,25 @@ public class CollegeApp extends javax.swing.JFrame {
         
         if (!ValidationUtil.isLmuIdValid(lmuIdText)) {
             System.out.println("Please Enter a Valid LMU ID");
+            errorOrNormalField(lmuId, module, errorLmu, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
             return; 
         }
 
         if (!ValidationUtil.isCollegeIdValid(collegeIdText)) {
             System.out.println("Please Enter a Valid College ID");
+            errorOrNormalField(collegeId, module, errorCollege, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
             return;
         }
 
         if (!ValidationUtil.isNameValid(nameText)) {
             System.out.println("Please Enter a Valid Name");
+            errorOrNormalField(name, module, errorName, "Enter Valid Name", Color.red, rootPaneCheckingEnabled);
             return;
         }
 
         if (!ValidationUtil.isNumValid(numText)) {
             System.out.println("Please Enter a Valid Number");
+            errorOrNormalField(num, module, errorNumber, "Enter Valid ID", Color.red, rootPaneCheckingEnabled);
             return;
         }
 
@@ -764,11 +820,7 @@ public class CollegeApp extends javax.swing.JFrame {
         
         loadListToTable();
         
-        
-        lmuId.setText("");
-        collegeId.setText("");
-        name.setText("");
-        num.setText("");
+        clearStudentForm();
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
@@ -781,6 +833,7 @@ public class CollegeApp extends javax.swing.JFrame {
         String module = (String) modules.getSelectedItem();        
         if (!ValidationUtil.isLmuIdValid(lmuIdText)) {
             System.out.println("Please Enter a Valid LMU ID");
+            
             return; 
         }
 
@@ -805,12 +858,9 @@ public class CollegeApp extends javax.swing.JFrame {
         }
         
         StudentModel exists = null;
-        int rowIndex = -1;
-        for (int i = 0; i < studentList.size(); i++) {
-            StudentModel stu = studentList.get(i);
+        for (StudentModel stu : studentList) {
             if (stu.getLmuId() == Integer.parseInt(lmuIdText)) {
                 exists = stu;
-                rowIndex = i; 
                 break;
             }
         }
@@ -825,13 +875,11 @@ public class CollegeApp extends javax.swing.JFrame {
         exists.setContact(numText);
         exists.setModule(module);
         
+        loadListToTable();
         
         System.out.println("Student Updated");
         
-        lmuId.setText("");
-        collegeId.setText("");
-        name.setText("");
-        num.setText("");
+        clearStudentForm();
         
         
     }//GEN-LAST:event_updateBtnActionPerformed
@@ -839,32 +887,34 @@ public class CollegeApp extends javax.swing.JFrame {
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
         String lmuIdText = lmuId.getText().trim();
+        if (lmuIdText.isEmpty()) {
+            System.out.println("Please Enter an LMU ID");
+            return;
+        }
+
         StudentModel exists = null;
-        
-        for(int i = 0; i < studentList.size(); i++){
-            StudentModel stu = studentList.get(i);
-            if(stu.getLmuId() == Integer.parseInt(lmuIdText)){
+
+        for (StudentModel stu : studentList) {
+            if (stu.getLmuId() == Integer.parseInt(lmuIdText)) {
                 exists = stu;
+                break; // Exit loop once the student is found
             }
         }
-        
-        
-        
-        if(exists == null){
+
+        // Check if the student exists in the list
+        if (exists == null) {
             System.out.println("No Student Found In List");
             return;
         }
-        
-        
-        
-              
+
+        // Remove the student from the list
         studentList.remove(exists);
         System.out.println("Student Removed");
+
+        // Refresh the table with updated list
+        loadListToTable();
         
-        lmuId.setText("");
-        collegeId.setText("");
-        name.setText("");
-        num.setText("");
+        clearStudentForm();
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void collegeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_collegeIdActionPerformed
@@ -911,6 +961,10 @@ public class CollegeApp extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JTextField collegeId;
     private javax.swing.JButton deleteBtn;
+    private javax.swing.JLabel errorCollege;
+    private javax.swing.JLabel errorLmu;
+    private javax.swing.JLabel errorName;
+    private javax.swing.JLabel errorNumber;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
