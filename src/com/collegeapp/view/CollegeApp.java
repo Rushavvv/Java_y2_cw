@@ -140,11 +140,11 @@ public class CollegeApp extends javax.swing.JFrame {
 
             },
             new String [] {
-                "LMU ID", "Full Name", "Program", "Contact", "Age"
+                "LMU ID", "Full Name", "Program", "Contact"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -162,8 +162,6 @@ public class CollegeApp extends javax.swing.JFrame {
             tblStudent.getColumnModel().getColumn(1).setResizable(false);
             tblStudent.getColumnModel().getColumn(2).setResizable(false);
             tblStudent.getColumnModel().getColumn(3).setResizable(false);
-            tblStudent.getColumnModel().getColumn(4).setResizable(false);
-            tblStudent.getColumnModel().getColumn(4).setPreferredWidth(40);
         }
 
         lblTblStudentTitle.setBackground(new java.awt.Color(0, 102, 102));
@@ -252,9 +250,7 @@ public class CollegeApp extends javax.swing.JFrame {
                                 .addComponent(addBtn)
                                 .addGap(25, 25, 25)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
                                 .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -292,7 +288,7 @@ public class CollegeApp extends javax.swing.JFrame {
             .addGroup(pnlAdminControlLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         pnlAdminControlLayout.setVerticalGroup(
             pnlAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -682,6 +678,7 @@ public class CollegeApp extends javax.swing.JFrame {
                            "From Module: " + student.getModule());
         
         studentList.add(student);
+        
         
         lmuId.setText("");
         collegeId.setText("");

@@ -4,6 +4,7 @@
  */
 package com.collegeapp.controller;
 import com.collegeapp.model.StudentModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,9 +23,22 @@ public class ValidationUtil extends StudentModel{
     public static boolean isCollegeIdValid(String clgId) {
         try {
             int id = Integer.parseInt(clgId);
-            return id >= 1000 && id <= 10000;
+            
+            if(id < 1000 || id > 10000){
+                JOptionPane.showMessageDialog(null, "Please Enter An Id Between 1000 And 10000!", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
+                return false;
+            }
+                
+            if(!clgId.matches("^23\\d{10}$")){
+                JOptionPane.showMessageDialog(null, "College Id Must Start With 23 And Have 12 Digits", "Invalid College ID", JOptionPane.ERROR_MESSAGE);   
+                return false;
+            }
+            
+            return true;
+            
         } catch (NumberFormatException e) {
-            return false; 
+            JOptionPane.showMessageDialog(null, "College ID Must Be a Valid Number.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            return true; 
         }
     }
     
