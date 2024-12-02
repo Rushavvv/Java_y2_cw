@@ -14,9 +14,23 @@ public class ValidationUtil extends StudentModel{
     public static boolean isLmuIdValid(String lmuId) {
         try {
             int id = Integer.parseInt(lmuId);
-            return id >= 1000 && id <= 10000;
+            
+            if(id < 1000 || id > 10000){
+               JOptionPane.showMessageDialog(null, "Please Enter An Id Between 1000 And 10000!", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
+               return false;
+            }
+            
+            if(!lmuId.matches("^23\\d{6}$")){
+               JOptionPane.showMessageDialog(null, "Id Must Start With 23 And Have 8 Digits", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
+               return false;
+            }
+            
+            return true;
+            
         } catch (NumberFormatException e) {
-            return false; 
+            JOptionPane.showMessageDialog(null, "LMU Id Is Not Valid", "Invalid College ID", JOptionPane.ERROR_MESSAGE);  
+
+            return true; 
         }
     }
     
@@ -29,7 +43,7 @@ public class ValidationUtil extends StudentModel{
                 return false;
             }
                 
-            if(!clgId.matches("^23\\d{10}$")){
+            if(!clgId.matches("^23\\d{6}$")){
                 JOptionPane.showMessageDialog(null, "College Id Must Start With 23 And Have 12 Digits", "Invalid College ID", JOptionPane.ERROR_MESSAGE);   
                 return false;
             }
